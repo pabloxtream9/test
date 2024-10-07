@@ -125,3 +125,36 @@ document.getElementById('incident-description').addEventListener('input', functi
     // Actualizar el texto del contador
     document.getElementById('char-count').textContent = remainingChars + " caracteres restantes";
 });
+
+// Simular un estado de inicio de sesión
+let isLoggedIn = false; // Cambia esto a true cuando el usuario inicie sesión
+
+// Función para mostrar el formulario de incidentes si el usuario ha iniciado sesión
+function toggleIncidentForm() {
+    const loginForm = document.getElementById('login-form');
+    const incidentForm = document.getElementById('incident-form');
+
+    if (isLoggedIn) {
+        loginForm.classList.add('hidden');
+        incidentForm.classList.remove('hidden');
+    } else {
+        loginForm.classList.remove('hidden');
+        incidentForm.classList.add('hidden');
+    }
+}
+
+// Simular el proceso de inicio de sesión
+document.getElementById('login-btn').addEventListener('click', function () {
+    isLoggedIn = true;
+    toggleIncidentForm(); // Mostrar el formulario de incidentes
+});
+
+// Simular el proceso de registro (puedes agregar la lógica para el registro aquí)
+document.getElementById('signup-btn').addEventListener('click', function () {
+    alert('Funcionalidad de registro aún no implementada');
+});
+
+// Llamar a la función al cargar la página
+toggleIncidentForm();
+
+// Lógica de registro de incidentes y búsqueda de ubicaciones permanece igual
