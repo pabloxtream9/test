@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insegurimap</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+</head>
+<body>
+    <div id="map"></div> <!-- Mapa ocupa toda la ventana -->
+
+    <!-- Contenedor de búsqueda y registro de incidencias -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar ciudad o pueblo">
+        <button id="search-btn">Buscar</button>
+    </div>
+    
+    <div class="incident-form">
+        <h3>Registrar Incidencia</h3>
+        <select id="incident-type">
+            <option value="agresión">Agresión</option>
+            <option value="robo">Robo</option>
+        </select>
+        
+        <input type="text" id="incident-location" placeholder="Lugar exacto">
+        
+        <!-- Campo para seleccionar la fecha del incidente -->
+        <label for="incident-date">Fecha del Incidente:</label>
+        <input type="date" id="incident-date">
+
+        <!-- Campo para seleccionar la hora del incidente -->
+        <label for="incident-time">Hora del Incidente:</label>
+        <input type="time" id="incident-time">
+
+        
+        <!-- Selector de uso de armas -->
+        <label for="incident-weapons">¿Uso de armas?</label>
+        <select id="incident-weapons">
+            <option value="no">No</option>
+            <option value="sí">Sí</option>
+        </select>
+        
+        <!-- Campo de descripción limitado a 200 caracteres -->
+        <textarea id="incident-description" placeholder="Descripción (máx. 200 caracteres)" maxlength="200"></textarea>
+        <div id="char-count">200 caracteres restantes</div>
+
+        
+        <button id="register-incident-btn">Registrar Incidencia</button>
+    </div>
+    
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
