@@ -18,7 +18,15 @@
         <button id="search-btn">Buscar</button>
     </div>
     
-    <div class="incident-form">
+    <!-- Si no se ha iniciado sesión, muestra el botón de inicio de sesión -->
+    <div id="login-form" class="incident-form">
+        <h3>Inicia sesión para registrar un incidente</h3>
+        <button id="login-btn">Iniciar sesión</button>
+        <button id="signup-btn">Registrarse</button>
+    </div>
+
+    <!-- Formulario de registro de incidentes (oculto al principio) -->
+    <div id="incident-form" class="incident-form hidden">
         <h3>Registrar Incidencia</h3>
         <select id="incident-type">
             <option value="agresión">Agresión</option>
@@ -27,30 +35,23 @@
         
         <input type="text" id="incident-location" placeholder="Lugar exacto">
         
-        <!-- Campo para seleccionar la fecha del incidente -->
         <label for="incident-date">Fecha del Incidente:</label>
         <input type="date" id="incident-date">
 
-        <!-- Campo para seleccionar la hora del incidente -->
         <label for="incident-time">Hora del Incidente:</label>
         <input type="time" id="incident-time">
 
-        
-        <!-- Selector de uso de armas -->
         <label for="incident-weapons">¿Uso de armas?</label>
         <select id="incident-weapons">
             <option value="no">No</option>
             <option value="sí">Sí</option>
         </select>
         
-        <!-- Campo de descripción limitado a 200 caracteres -->
         <textarea id="incident-description" placeholder="Descripción (máx. 200 caracteres)" maxlength="200"></textarea>
         <div id="char-count">200 caracteres restantes</div>
 
-        
         <button id="register-incident-btn">Registrar Incidencia</button>
     </div>
-    
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
